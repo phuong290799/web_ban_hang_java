@@ -2,6 +2,7 @@ package nongsan.webmvc.model;
 
 public class Admin {
 	 int id;
+	 int id1;
 	 String username;
 	 String password;
 	 String name;
@@ -50,5 +51,7 @@ public class Admin {
 	public String toString() {
 		return "Admin [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + "]";
 	}
+	
+	
 }
 
