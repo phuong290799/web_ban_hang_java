@@ -7,7 +7,7 @@ $(function() {
 			var myChart = new Chart(ctx, {
 				type: 'doughnut',
 				data: {
-					labels: ["rau sạch", "củ quả", "hạt", "mật ong"],
+					labels: ["Hoa Sinh Nhât", "Hoa Tang Lễ", "Hoa Tình yêu", "Hoa Khai Trương"],
 					datasets: [{
 						backgroundColor: [
 							"#ffffff",

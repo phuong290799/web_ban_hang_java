@@ -66,31 +66,35 @@
             <div class="card">
               <div class="card-header">Danh mục bán chạy
               </div>
+              
+              
               <div class="card-body">
                 <div class="chart-container-2">
                   <canvas id="chart2"></canvas>
                 </div>
               </div>
+              
+              
               <div class="table-responsive">
                 <table class="table align-items-center">
                   <tbody>
                     <tr>
-                      <td><i class="fa fa-circle text-white mr-2"></i>Rau sạch</td>
+                      <td><i class="fa fa-circle text-white mr-2"></i>Hoa Sinh Nhât</td>
                       <td>58.000 VNĐ</td>
                       <td>+55%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-1 mr-2"></i>Củ quả</td>
+                      <td><i class="fa fa-circle text-light-1 mr-2"></i>Hoa Tang Lễ</td>
                       <td>110.000 VNĐ</td>
                       <td>+25%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-2 mr-2"></i>Hạt</td>
+                      <td><i class="fa fa-circle text-light-2 mr-2"></i>Hoa Tình yêu</td>
                       <td>215.500 VNĐ</td>
                       <td>+15%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-3 mr-2"></i>Mật ong</td>
+                      <td><i class="fa fa-circle text-light-3 mr-2"></i>Hoa Khai Trương</td>
                       <td>310.000 VNĐ</td>
                       <td>+5%</td>
                     </tr>

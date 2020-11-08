@@ -1,6 +1,9 @@
 package nongsan.webmvc.controller.admin;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -36,7 +39,7 @@ public class AdminAddController1 extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		String admin_username = request.getParameter("admin-username"); 
-		String admin_password = request.getParameter("admin-password"); 
+		String admin_password = md5(request.getParameter("admin-password")); 
 		String admin_name = request.getParameter("admin-name");
 		System.out.println(admin_name);
 		System.out.println(admin_username);
@@ -63,5 +66,19 @@ public class AdminAddController1 extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	public static String md5(String str){
+		String result = "";
+		MessageDigest digest;
+		try {
+			digest = MessageDigest.getInstance("MD5");
+			digest.update(str.getBytes());
+			BigInteger bigInteger = new BigInteger(1,digest.digest());
+			result = bigInteger.toString(16);
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
 
 }

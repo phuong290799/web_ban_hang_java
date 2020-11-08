@@ -34,7 +34,7 @@ public class AdminLoginController extends HttpServlet {
     	   response.setContentType("text/html");   
 		 
 		String username = request.getParameter("admin-username");
-		String password = (request.getParameter("admin-password"));
+		String password = md5((request.getParameter("admin-password")));
 		System.out.println(username);
 		System.out.println(password);
 		Admin admin = new Admin();

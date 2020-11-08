@@ -42,7 +42,7 @@
                   </div>
                   <div class="form-group">
                     <label for="input-4">Mật khẩu</label>
-                    <input required type="password" class="form-control" id="myinput" placeholder="Mật khẩu" value="<%=user.getPassword()%>" name="user-password">
+                    <input disabled required type="password" class="form-control" id="myinput" placeholder="Mật khẩu" value="<%=user.getPassword()%>" name="user-password">
 					<input type="checkbox" onclick="myFunction1()">Hiển thị mật khẩu
 					<script>function myFunction1() {
                     	  var x = document.getElementById("myinput");
@@ -52,7 +52,8 @@
                     	    x.type = "password";
                     	  }
                     	}
-					</script>                   
+					</script> 
+					<input required type="hidden" class="form-control" id="myinput" placeholder="Mật khẩu" value="<%=user.getPassword()%>" name="user-password1">                  
                   </div>
                   <div class="form-group">
                     <label for="input-5">Date</label>

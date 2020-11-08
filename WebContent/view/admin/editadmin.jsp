@@ -28,16 +28,19 @@
 	                  </div>
 	                  <div class="form-group">
 	                    <label for="input-1">Password</label>
-	                    <input required type="password" class="form-control" id="myinput" placeholder="Mật khẩu" name="password" value="<%=admin.getPassword()%>">
-        <input type="checkbox" onclick="myFunction1()">Hiển thị mật khẩu
-                    <script>function myFunction1() {
+	                    <input disabled required type="password" class="form-control" id="myinput" placeholder="Mật khẩu" name="password1" value="<%=admin.getPassword()%>">
+       					<input type="checkbox" onclick="myFunction1()">Hiển thị mật khẩu
+					<script>function myFunction1() {
                     	  var x = document.getElementById("myinput");
                     	  if (x.type === "password") {
                     	    x.type = "text";
                     	  } else {
                     	    x.type = "password";
                     	  }
-                    	}</script> 
+                    	}
+					</script> 
+                     <input required type="hidden" class="form-control" id="myinput" placeholder="Mật khẩu" name="password" value="<%=admin.getPassword()%>">
+       
 	                  </div>
 	                  <div class="form-group">
 	                    <label for="input-1">Tên Admin</label>
