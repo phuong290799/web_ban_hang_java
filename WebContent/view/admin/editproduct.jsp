@@ -27,7 +27,7 @@
                   
                   <div class="form-group">
                     <label for="input-1">Tên sản phẩm</label>
-                    <input type="text" class="form-control" id="input-1" placeholder="Tên sản phẩm" name="product-name" value="<%=product.getName()%>">
+                    <input required type="text" class="form-control" id="input-1" placeholder="Tên sản phẩm" name="product-name" value="<%=product.getName()%>">
                   </div>
                   
         
@@ -56,11 +56,11 @@
 	                </div>
 	                 <div class="form-group">
                     <label for="input-1">Ngày</label> 
-                    <input type="date" class="form-control" id="input-1" placeholder="Ngày đăng" name="product-day" value="<%=product.getCreated()%>">
+                    <input required type="date" class="form-control" id="input-1" placeholder="Ngày đăng" name="product-day" value="<%=product.getCreated()%>">
                   </div>
 	                <div class="form-group">
                     <label for="input-1">Giá</label>
-                    <input type="text" class="form-control" id="input-1" placeholder="Giá" name="product-price" value="<%=product.getPrice()%>">
+                    <input required type="text" class="form-control" id="input-1" placeholder="Giá" name="product-price" value="<%=product.getPrice()%>">
                   </div>
                   
                     <div class="form-group">
@@ -75,7 +75,7 @@
 	                 <div class="form-group">
 		                <label for="input-2">Giảm giá</label>
 		                <div class="input-group">
-		                <input type="text" class="form-control" placeholder="Giảm ... %" name="product-discount" value="<%=product.getDiscount()%>">
+		                <input required type="text" class="form-control" placeholder="Giảm ... %" name="product-discount" value="<%=product.getDiscount()%>">
 		                <div class="input-group-append">
 		                <button class="btn btn-light" type="button">%</button>
 		                </div>
@@ -84,25 +84,25 @@
                  <div class="form-group">
                   <label for="input-2" class="col-form-label">Mô tả</label>
                   <div>
-                    <textarea class="form-control" rows="4" id="input-17" name="product-desc"><%=product.getDescription()%></textarea>
+                    <textarea required class="form-control" rows="4" id="input-17" name="product-desc"><%=product.getDescription()%></textarea>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="input-2" class="col-form-label">Nội dung</label>
                   <div>
-                    <textarea class="form-control" rows="4" id="input-17" name="product-content"><%=product.getContent()%></textarea>
+                    <textarea required class="form-control" rows="4" id="input-17" name="product-content"><%=product.getContent()%></textarea>
                   </div>
                 </div>
                 
                  <div class="form-group">
                     <label for="input-1">Ảnh đại diện</label>
-                    <input type="text" class="form-control" id="input-1" placeholder="Tên hình" name="product-image" value="<%=product.getImage_link()%>">
+                    <input required type="text" class="form-control" id="input-1" placeholder="Tên hình" name="product-image" value="<%=product.getImage_link()%>">
                   </div>
               
               
           
                <div class="form-footer">
-                     <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/ProductListController1">Hủy</a></button>
+                     <a href="${pageContext.request.contextPath}/ProductListController1">Hủy</a>
                          
                      <button type="submit" class="btn btn-success">Cập nhật</button>
                 </div>

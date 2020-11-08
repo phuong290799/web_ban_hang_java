@@ -35,6 +35,7 @@ public class AdminLoginController extends HttpServlet {
 		 
 		String username = request.getParameter("admin-username");
 		String password = (request.getParameter("admin-password"));
+		System.out.println(username);
 		System.out.println(password);
 		Admin admin = new Admin();
 		admin.setName(request.getParameter("name"));

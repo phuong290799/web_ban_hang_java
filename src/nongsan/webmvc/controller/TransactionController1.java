@@ -65,7 +65,11 @@ public class TransactionController1 extends HttpServlet {
 		transactionService.insert(transaction);
 
 		int maxid =0;
+		
 		List<Transactions> transactions = transactionService.getAll();
+		
+		
+		
 		if(transactions.size() == 0)
 		{
 			maxid = 0;
@@ -77,6 +81,10 @@ public class TransactionController1 extends HttpServlet {
 					maxid = transactions2.getId();
 			}
 		}
+		
+		
+		
+		
 		HttpSession session = request.getSession(true);
 		Order order = (Order) session.getAttribute("order");
 		List<Item> listItems = order.getItems();

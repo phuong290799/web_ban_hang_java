@@ -24,22 +24,24 @@
 	                  </div>
 	                  <div class="form-group">
 	                    <label for="input-1">Tên chuyên mục</label>
-	                    <input type="text" class="form-control" id="input-1" placeholder="Tên chuyên mục" name="name" value="<%=catalog.getName()%>">
+	                    <input required type="text" class="form-control" id="input-1" placeholder="Tên chuyên mục" name="name" value="<%=catalog.getName()%>">
 	                  </div>
 		              <div class="form-group">
 		                  <label for="input-2">Chuyên mục cha</label>
 		                  <div>
-		                     <select class="form-control valid" id="input-6" name="parent-id" required aria-invalid="false">
+		                     <select required class="form-control valid" id="input-6" name="parent-id" aria-invalid="false">
 		                     <%if(catalog.getParent_id().equals(0)) {%>
-		                        <option value="0">Sản Phẩm Cũ</option>
+		                        <option value="0" selected="selected">Sản Phẩm Cũ</option>
+		                        <option value="1">Sản phẩm mới</option>
 		                      <%}else{ %>
-		                       <option value="1">Sản phẩm mới</option>
+		                       <option value="0" >Sản Phẩm Cũ</option>
+		                        <option value="1" selected="selected">Sản phẩm mới</option>
 		                       <%} %>
 		                    </select>
 		                  </div>
 		               </div>
 	                   <div class="form-footer">
-	                      <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/CategoryListController1">Hủy</a></button>
+	                      <a href="${pageContext.request.contextPath}/CategoryListController1">Hủy</a>
                          
                      		<button type="submit" class="btn btn-success">Cập nhật</button>
 	                   </div> 

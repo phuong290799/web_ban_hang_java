@@ -19,36 +19,36 @@
                   
                   <div class="form-group">
                     <label for="input-1">Tên khách hàng</label>
-                    <input type="text" class="form-control" id="input-1" name="order-name" value="${order.user_name}">
+                    <input required type="text" class="form-control" id="input-1" name="order-name" value="${order.user_name}">
                   </div>
                   
                    <div class="form-group">
                     <label for="input-1">Email</label>
-                    <input type="text" class="form-control" id="input-1" name="order-mail" value="${order.user_mail}">
+                    <input required type="text" class="form-control" id="input-1" name="order-mail" value="${order.user_mail}">
                   </div>
                   
                    <div class="form-group">
                     <label for="input-1">Số điện thoại</label>
-                    <input type="text" class="form-control" id="input-1" name="order-phone" value="${order.user_phone}">
+                    <input required type="text" class="form-control" id="input-1" name="order-phone" value="${order.user_phone}">
                   </div>
                   
                       
                  <div class="form-group">
                   <label for="input-2" class="col-form-label">Địa chỉ</label>
                   <div>
-                    <textarea class="form-control" rows="4" id="input-17" name="order-address">${order.address}</textarea>
+                    <textarea required class="form-control" rows="4" id="input-17" name="order-address">${order.address}</textarea>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="input-2" class="col-form-label">Ghi chú</label>
                   <div>
-                    <textarea class="form-control" rows="4" id="input-17" name="order-mess">${order.message}</textarea>
+                    <textarea required class="form-control" rows="4" id="input-17" name="order-mess">${order.message}</textarea>
                   </div>
                 </div>
                   
 	              <div class="form-group">
                     <label for="input-1">Tổng tiền</label>
-                    <input type="text" class="form-control" id="input-1" name="order-amount" value="${order.amount}">
+                    <input  required type="text" class="form-control" id="input-1" name="order-amount" value="${order.amount}">
                   </div>
                   
                     <div class="form-group">
@@ -72,7 +72,7 @@
 	                </div>
 	          
 		               <div class="form-footer">
-		                     <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/OrderListController1">Hủy</a></button>
+		                     <a href="${pageContext.request.contextPath}/OrderListController1">Hủy</a>
 		                         
 		                     <button type="submit" class="btn btn-success">Cập nhật</button>
 		                </div>

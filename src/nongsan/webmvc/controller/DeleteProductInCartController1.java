@@ -54,13 +54,15 @@ public class DeleteProductInCartController1 extends HttpServlet {
 		}
 		order.setItems(listItems);
 		session.setAttribute("order", order);
-		response.sendRedirect(request.getContextPath() + "/view/client/cart.jsp");
+		
 		if(order.getSumPrice() == 0)
 		{
 			session.setAttribute("sumprice", "0");
 		} else {
 			session.setAttribute("sumprice", df.format(order.getSumPrice()));
 		}
+		response.sendRedirect(request.getContextPath() + "/view/client/cart.jsp");
+		
 	}
 
 	/**

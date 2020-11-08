@@ -38,38 +38,62 @@ public class AddtoCartController1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		initial
 		int n= 0;
 		int qty = 1;
 		String id;
+		
+		
 		if(request.getParameter("product-id")!=null) {
+//			Lay product theo ID
 			id = request.getParameter("product-id");
 			Product product = productService.get(Integer.parseInt(id));;
 			if(product != null) {
+//				neu co so luong thi xet
 				if(request.getParameter("qty")!=null) {
 					qty = Integer.parseInt(request.getParameter("qty"));
 				}
 				
 				HttpSession session = request.getSession();
+				
+//				neu chua order truoc 
 				if(session.getAttribute("order") == null) {
-					Order order = new Order();
+					
 					List<Item> listItems = new ArrayList<Item>();
+					
+//					Set item da order
 					Item item = new Item();
 					item.setQty(qty);
 					item.setProduct(product);
 					item.setPrice(Double.parseDouble(product.getPrice()) - Double.parseDouble(product.getPrice())*(Double.parseDouble(product.getDiscount())/100));
+					
+//					xet tong order
+					Order order = new Order();
 					order.setSumPrice(0);
 					order.setSumPrice(order.getSumPrice() + item.getPrice());
+					
+					
+//					add vao list_item
 					listItems.add(item);
+//					set order có list_item
 					order.setItems(listItems);
 					n = listItems.size();
+					
+//					set session
 					session.setAttribute("length_order",n);
 					session.setAttribute("order", order);
 					session.setAttribute("sumprice", df.format(order.getSumPrice()));
 				} else {
+//					Lay ra order da order truoc do
 					Order order = (Order) session.getAttribute("order");
+					
+					
 					List<Item> listItems = order.getItems();
 					boolean check = false;
+					
+//					duyet cac item xem item moi order co trung ko
 					for(Item item : listItems) {
+//						neu trung thi cap nhat lai so luong va gia và tong gia cua order
 						if(Integer.parseInt(item.getProduct().getId()) == Integer.parseInt(product.getId())) {
 							item.setQty(item.getQty() + qty);
 							order.setSumPrice(order.getSumPrice() + Double.parseDouble(item.getProduct().getPrice()) - Double.parseDouble(item.getProduct().getPrice())*(Double.parseDouble(item.getProduct().getDiscount())/100));
@@ -77,6 +101,7 @@ public class AddtoCartController1 extends HttpServlet {
 							check = true;
 						}
 					}
+//					neu ko thi Set new item da order
 					if(check == false) {
 						Item item = new Item();
 						item.setQty(qty);
@@ -85,7 +110,11 @@ public class AddtoCartController1 extends HttpServlet {
 						order.setSumPrice(order.getSumPrice() + Double.parseDouble(item.getProduct().getPrice()) - Double.parseDouble(item.getProduct().getPrice())*(Double.parseDouble(item.getProduct().getDiscount())/100));
 						listItems.add(item);
 					}
+					
+					
 					n = listItems.size();
+					
+//					set session
 					session.setAttribute("length_order",n);
 					session.setAttribute("order", order);
 					session.setAttribute("sumprice", df.format(order.getSumPrice()));

@@ -46,14 +46,17 @@ public class ProductListClientController1 extends HttpServlet {
 		request.setAttribute("catelist", cateList);
 		List<Product> productList = productService.getAll();
 		request.setAttribute("productlist", productList);
-		//Giá giảm
+		
+		
+		
+		
+		//Giảm Giá
 		List<Product> productsList1 = new ArrayList<Product>();
 		for(Product product: productList)
 		{
 			Product product1 = productService.get(Integer.parseInt(product.getId()));
 			product1.setPrice(String.valueOf(df.format(Double.parseDouble(product.getPrice()) * (1 - (Double.parseDouble(product.getDiscount())/100)))));
 			productsList1.add(product1);
-			
 		}
 
 		request.setAttribute("productlist1", productsList1);

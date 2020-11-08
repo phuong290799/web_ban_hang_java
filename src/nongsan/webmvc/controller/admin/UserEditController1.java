@@ -76,6 +76,9 @@ public class UserEditController1 extends HttpServlet {
 		List<User> userList = null;
 		userService.edit(user);
 		userList= userService.getAll();
+		
+		
+		
 		request.setAttribute("userlist", userList); 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/user.jsp"); 
 		dispatcher.forward(request, response); 

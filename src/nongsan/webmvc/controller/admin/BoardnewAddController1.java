@@ -37,11 +37,13 @@ public class BoardnewAddController1 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
+//		Lay cac tham so
 		String new_title = request.getParameter("new-title");
 		String new_content = request.getParameter("new-content");
 		String new_image_link = request.getParameter("new-image_link");
 		String new_author = request.getParameter("new-author");
 		String new_created = request.getParameter("new-created");
+//		tao Object & set
 		Boardnew boardnew = new Boardnew();
 		boardnew.setTitle(new_title);
 		boardnew.setContent(new_content);
@@ -49,10 +51,11 @@ public class BoardnewAddController1 extends HttpServlet {
 		boardnew.setAuthor(new_author);
 		boardnew.setCreated(new_created);
 		
+//		Insert & getList
 		List<Boardnew> boardList = null;
 		boardnewService.insert(boardnew);
 		boardList = boardnewService.getAll();
-		
+//		setAttribute va do ra view
 		request.setAttribute("boardnewlist", boardList); 
 		//response.sendRedirect(request.getContextPath() + "/view/admin/show-new.jsp");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/show-new.jsp"); 

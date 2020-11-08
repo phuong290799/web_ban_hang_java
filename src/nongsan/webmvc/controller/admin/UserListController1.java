@@ -25,7 +25,7 @@ import nongsan.webmvc.service.impl.UserServicesImpl;
 @WebServlet("/UserListController1")
 public class UserListController1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	UserService userService = new UserServicesImpl();   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -38,8 +38,8 @@ public class UserListController1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("okokokok");
-		UserService userService = new UserServicesImpl(); 
+	
+		 
 		List<User> userList = null;
 		userList = userService.getAll(); 
 		request.setAttribute("userlist", userList); 

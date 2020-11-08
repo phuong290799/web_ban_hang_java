@@ -16,7 +16,7 @@
                
                   <div class="form-group">
                     <label for="input-1">Tên sản phẩm</label>
-                    <input type="text" class="form-control" id="input-1" placeholder="Tên sản phẩm" name="product-name">
+                    <input required type="text" class="form-control" id="input-1" placeholder="Tên sản phẩm" name="product-name">
                   </div>
                   
         
@@ -32,11 +32,11 @@
 	                </div>
 	                 <div class="form-group">
                     <label for="input-1">Ngày</label> 
-                    <input type="date" class="form-control" id="the-date" placeholder="Ngày đăng" name="product-day">
+                    <input required type="date" class="form-control" id="the-date" placeholder="Ngày đăng" name="product-day">
                   </div>
 	                <div class="form-group">
                     <label for="input-1">Giá</label>
-                    <input type="text" class="form-control" id="input-1" placeholder="Giá" name="product-price">
+                    <input required type="text" class="form-control" id="input-1" placeholder="Giá" name="product-price">
                   </div>
                     <div class="form-group">
 	                  <label for="input-2">Trạng thái</label>
@@ -50,7 +50,7 @@
 	                 <div class="form-group">
 		                <label for="input-2">Giảm giá</label>
 		                <div class="input-group">
-		                <input type="text" class="form-control" placeholder="Giảm ... %" name="product-discount">
+		                <input required type="text" class="form-control" placeholder="Giảm ... %" name="product-discount">
 		                <div class="input-group-append">
 		                <button class="btn btn-light" type="button">%</button>
 		                </div>
@@ -59,23 +59,23 @@
                  <div class="form-group">
                   <label for="input-2" class="col-form-label">Mô tả</label>
                   <div>
-                    <textarea class="form-control" rows="4" id="input-17" name="product-desc"></textarea>
+                    <textarea required="required" class="form-control" rows="4" id="input-17" name="product-desc"></textarea>
                   </div>
                 </div>
                 
                 <div class="form-group">
                   <label for="input-2" class="col-form-label">Nội dung</label>
                   <div>
-                    <textarea class="form-control" rows="4" id="input-17" name="product-content"></textarea>
+                    <textarea required class="form-control" rows="4" id="input-17" name="product-content"></textarea>
                   </div>
                 </div>
                 
                  <div class="form-group">
                     <label for="input-1">Ảnh đại diện</label>
-                    <input type="text" class="form-control" id="input-1" placeholder="Tên hình" name="product-image">
+                    <input required type="text" class="form-control" id="input-1" placeholder="Tên hình" name="product-image">
                   </div>
                <div class="form-footer">
-                    <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/ProductListController1">Hủy</a></button>
+                    <a href="${pageContext.request.contextPath}/ProductListController1">Hủy</a>
                     <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> Thêm</button>
                 </div>
                 </form>

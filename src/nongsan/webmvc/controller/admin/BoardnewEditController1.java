@@ -31,27 +31,27 @@ public class BoardnewEditController1 extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		Lay cac tham so
 		String id = request.getParameter("id");
+//		tao Object
 		Boardnew boardnew=null;
 		boardnew = boardnewService.get(Integer.parseInt(id));
+		
+//		setAttribute va do ra view
 		request.setAttribute("boardnewlist", boardnew);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/editboardnew.jsp");
 		dispatcher.forward(request, response);
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		
-		
+//		Lay cac tham so
+//		Tao Object
 		Boardnew boardnew = new Boardnew();
 		boardnew.setId(request.getParameter("new-id"));
 		boardnew.setTitle(request.getParameter("new-title"));
@@ -59,12 +59,12 @@ public class BoardnewEditController1 extends HttpServlet {
 		boardnew.setImage_link(request.getParameter("new-image_link"));
 		boardnew.setAuthor(request.getParameter("new-author"));
 		boardnew.setCreated(request.getParameter("new-created"));
-		
+//		Edit & getList
 		List<Boardnew> boardList = null;
 		boardnewService.edit(boardnew);
 		boardList = boardnewService.getAll();
 		
-		
+//		setAttribute va do ra view
 		request.setAttribute("boardnewlist", boardList); 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/show-new.jsp"); 
 		dispatcher.forward(request, response); 

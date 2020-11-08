@@ -77,6 +77,9 @@ public class ProductEditController1 extends HttpServlet {
 		List<Product> productList = null;
 		productService.edit(product);
 		productList = productService.getAll();
+		
+		
+		
 		request.setAttribute("productlist", productList); 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/show-product.jsp"); 
 		dispatcher.forward(request, response); 

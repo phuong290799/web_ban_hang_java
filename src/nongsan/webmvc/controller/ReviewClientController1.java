@@ -41,10 +41,16 @@ public class ReviewClientController1 extends HttpServlet {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String content = request.getParameter("content");
+		
+		
+		
 		long millis=System.currentTimeMillis();  
 		java.sql.Date date=new java.sql.Date(millis);  
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		String today = df.format(date);
+		
+		
+		
 		Review review = new Review();
 		review.setName(name);
 		review.setEmail(email);
@@ -52,6 +58,9 @@ public class ReviewClientController1 extends HttpServlet {
 		review.setContent(content);
 		review.setCreated(today);
 		System.out.println("tha­ tostring: " + review);
+		
+		
+		
 		reviewService.insert(review);
 		response.sendRedirect(request.getContextPath() + "/HomeController1");
 		

@@ -35,9 +35,9 @@ public class BoardnewListController1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("okokokok");
-		
+//		getList
 		List<Boardnew> boardnewList = newService.getAll();
+//		setAttribute va do ra view
 		request.setAttribute("boardnewlist", boardnewList);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/show-new.jsp");
 		dispatcher.forward(request, response);

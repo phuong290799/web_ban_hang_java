@@ -26,23 +26,23 @@
                   </div>
                   <div class="form-group">
                     <label for="input-1">Họ tên</label>
-                    <input type="text" class="form-control" id="exampleInputUsername" placeholder="Họ tên" value="<%=user.getName()%>" name="user-name">
+                    <input required type="text" class="form-control" id="exampleInputUsername" placeholder="Họ tên" value="<%=user.getName()%>" name="user-name">
                   </div>
                   <div class="form-group">
                     <label for="input-2">Email</label>
-                    <input type="text" class="form-control" id="exampleInputUsername" placeholder="Địa chỉ Email" value="<%=user.getEmail()%>" name="user-email">
+                    <input required type="text" class="form-control" id="exampleInputUsername" placeholder="Địa chỉ Email" value="<%=user.getEmail()%>" name="user-email">
                   </div>
                   <div class="form-group">
                     <label for="input-3">Số điện thoại</label>
-                    <input type="text" class="form-control" id="input-4" placeholder="Số điện thoại" value="<%=user.getPhone()%>" name="user-phone">
+                    <input  required type="text" class="form-control" id="input-4" placeholder="Số điện thoại" value="<%=user.getPhone()%>" name="user-phone">
                   </div>
                   <div class="form-group">
                     <label for="input-3">UserName</label>
-                    <input type="text" class="form-control" id="input-5" placeholder="Username" value="<%=user.getUsername()%>" name="user-userName">
+                    <input required type="text" class="form-control" id="input-5" placeholder="Username" value="<%=user.getUsername()%>" name="user-userName">
                   </div>
                   <div class="form-group">
                     <label for="input-4">Mật khẩu</label>
-                    <input type="password" class="form-control" id="myinput" placeholder="Mật khẩu" value="<%=user.getPassword()%>" name="user-password">
+                    <input required type="password" class="form-control" id="myinput" placeholder="Mật khẩu" value="<%=user.getPassword()%>" name="user-password">
 					<input type="checkbox" onclick="myFunction1()">Hiển thị mật khẩu
 					<script>function myFunction1() {
                     	  var x = document.getElementById("myinput");
@@ -56,12 +56,12 @@
                   </div>
                   <div class="form-group">
                     <label for="input-5">Date</label>
-                    <input type="date" class="form-control" id="input-6" placeholder="Ngày tạo" value="<%=user.getCreated()%>" name="user-created">
+                    <input required type="date" class="form-control" id="input-6" placeholder="Ngày tạo" value="<%=user.getCreated()%>" name="user-created">
                   </div>
                   
                   <div class="form-group">
-                    <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/UserListController1">Hủy</a></button>
-                         
+                    <a href="${pageContext.request.contextPath}/UserListController1">Hủy</a>
+                        
                      <button type="submit" class="btn btn-success">Cập nhật</button>
                   </div>
                 </form>

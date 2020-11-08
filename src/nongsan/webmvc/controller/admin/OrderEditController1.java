@@ -69,6 +69,8 @@ public class OrderEditController1 extends HttpServlet {
 		List<Transactions> transactionsList = null;
 		transactionService.edit(transactions);
 		transactionsList = transactionService.getAll();
+		
+		
 		request.setAttribute("order", transactionsList); 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/show-order.jsp"); 
 		dispatcher.forward(request, response); 

@@ -25,6 +25,7 @@ import nongsan.webmvc.service.impl.ProductServiceImpl;
 public class ProductAddController1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	CategoryService cateService = new CategoryServicesImpl();  
+	ProductService productService = new ProductServiceImpl();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -38,6 +39,8 @@ public class ProductAddController1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Catalog> cateList = cateService.getAll();
+		
+		
 		request.setAttribute("catelist", cateList);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/addproduct.jsp"); 
 		dispatcher.forward(request, response); 
@@ -70,7 +73,7 @@ public class ProductAddController1 extends HttpServlet {
 		product.setImage_link(product_image);
 		product.setCreated(product_day);
 		
-		ProductService productService = new ProductServiceImpl();
+		
 		
 		List<Product> productList = null;
 		productService.insert(product);

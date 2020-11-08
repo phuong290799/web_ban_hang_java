@@ -23,21 +23,21 @@
                   </div>
                   <div class="form-group">
                     <label for="input-2">Tên tin tức</label>
-                    <input type="text" class="form-control" id="input-2" placeholder="Tên tin tức" value="<%=boardnew.getTitle()%>"name="new-title">
+                    <input required type="text" class="form-control" id="input-2" placeholder="Tên tin tức" value="<%=boardnew.getTitle()%>"name="new-title">
                   </div>
                   <div class="form-group">
                     <label for="input-3">Nội dung</label>
-                    <textarea class="form-control" rows="4" id="input-17" name="new-content"><%=boardnew.getContent()%></textarea>
+                    <textarea required class="form-control" rows="4" id="input-17" name="new-content"><%=boardnew.getContent()%></textarea>
                   </div>
                   <div class="form-group">
                     <label for="input-2">Hình ảnh</label>
-                    <input type="text" class="form-control" id="input-10" placeholder="Địa chỉ hình ảnh" value="<%=boardnew.getImage_link()%>"name="new-image_link">
+                    <input required type="text" class="form-control" id="input-10" placeholder="Địa chỉ hình ảnh" value="<%=boardnew.getImage_link()%>"name="new-image_link">
                   </div>
 	               <div class="form-group">
 	                  <label for="input-4">Người đăng</label>
                   <div>
-                    <select class="form-control valid" id="input-4" name="new-author"" >
-                        <option>NULL</option>
+                    <select required class="form-control valid" id="input-4" name="new-author"" >
+                        
                         <option>Nguyen ngoc quang nhan</option>
                         <option>Pham van phuong</option> 
                         <option>Hoang thi thao</option>
@@ -47,10 +47,10 @@
                   </div>
                   <div class="form-group">
 	                  <label for="input-5">Ngày đăng</label>
-	                  <input type="date" class="form-control" id="input-5" value="<%=boardnew.getCreated()%>" name="new-created">
+	                  <input required type="date" class="form-control" id="input-5" value="<%=boardnew.getCreated()%>" name="new-created">
 	              </div>
                  <div class="form-footer">
-                 	<button class="btn btn-danger"><a href="${pageContext.request.contextPath}/BoardnewListController1">Hủy</a></button>
+                 	<a href="${pageContext.request.contextPath}/BoardnewListController1">Hủy</a>
                      <button class="btn btn-success">Cập nhật</button>
                 </div>
                 </form>

@@ -45,6 +45,7 @@ public class ProductDetailController1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
+		
 		Product detail_product = productService.get(Integer.parseInt(id));
 		request.setAttribute("detail_product", detail_product);
 		

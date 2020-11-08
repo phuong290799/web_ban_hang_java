@@ -32,13 +32,15 @@ public class BoardnewDeleteController1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+//		Lay cac tham so
 		String id = request.getParameter("id");
+		
+//		Delete & getList
 		boardnewService.delete(Integer.parseInt(id));
+		
+		
+//		setAttribute va do ra view
 		request.setAttribute("boardnewlist", boardnewService.getAll());	
-		
-		
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin/show-new.jsp"); 
 		dispatcher.forward(request, response); 
 	}

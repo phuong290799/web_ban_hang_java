@@ -14,7 +14,7 @@
                 
                   <div class="form-group">
                     <label for="input-1">Tên chuyên mục</label>
-                    <input type="text" class="form-control" id="input-1" placeholder="Tên chuyên mục" name="cate-name">
+                    <input required type="text" class="form-control" id="input-1" placeholder="Tên chuyên mục" name="cate-name">
                   </div>
 	               <div class="form-group">
 	                  <label for="input-2">Chuyên mục cha</label>
@@ -26,7 +26,7 @@
 	                  </div>
 	                </div>
                  <div class="form-footer">
-                     <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/CategoryListController1">Hủy</a></button>
+                    <a href="${pageContext.request.contextPath}/CategoryListController1">Hủy</a>
                     <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> Thêm</button>
                 </div>
                 </form>

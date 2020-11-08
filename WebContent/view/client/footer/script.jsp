@@ -16,6 +16,41 @@
 	})();
 	</script>
 <!--End of Tawk.to Script-->
+
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v8.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="114258073815701"
+  theme_color="#d696bb"
+  logged_in_greeting="Xin chào! Mình giúp gì được cho bạn nào :v"
+  logged_out_greeting="Xin chào! Mình giúp gì được cho bạn nào :v">
+      </div>
+      
+      
+      
+      
+
+
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="${url}/js/bootstrap.js"></script>  

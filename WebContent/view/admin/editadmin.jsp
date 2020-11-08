@@ -24,11 +24,11 @@
 	                  </div>
 	                  <div class="form-group">
 	                    <label for="input-1">Username</label>
-	                    <input type="text" class="form-control" id="input-1" placeholder="Username" name="username" value="<%=admin.getUsername()%>">
+	                    <input required type="text" class="form-control" id="input-1" placeholder="Username" name="username" value="<%=admin.getUsername()%>">
 	                  </div>
 	                  <div class="form-group">
 	                    <label for="input-1">Password</label>
-	                    <input type="password" class="form-control" id="myinput" placeholder="Mật khẩu" name="password" value="<%=admin.getPassword()%>">
+	                    <input required type="password" class="form-control" id="myinput" placeholder="Mật khẩu" name="password" value="<%=admin.getPassword()%>">
         <input type="checkbox" onclick="myFunction1()">Hiển thị mật khẩu
                     <script>function myFunction1() {
                     	  var x = document.getElementById("myinput");
@@ -41,10 +41,10 @@
 	                  </div>
 	                  <div class="form-group">
 	                    <label for="input-1">Tên Admin</label>
-	                    <input type="text" class="form-control" id="input-1" placeholder="Tên Admin" name="name" value="<%=admin.getName()%>">
+	                    <input required type="text" class="form-control" id="input-1" placeholder="Tên Admin" name="name" value="<%=admin.getName()%>">
 	                  </div>	                  		              
 	                 <div class="form-footer">
-	                 <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/AdminListController1">Hủy</a></button>
+	                 <a href="${pageContext.request.contextPath}/AdminListController1">Hủy</a>
 	                    <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> Sửa </button>
 	                </div> 
 	               
